@@ -78,7 +78,7 @@ def evaluate_compliance(event):
     except botocore.exceptions.ClientError as e:
         print("describe_security_groups failure on group ", group_id, " .")
         return
-        
+
     print("security group definition: ", json.dumps(response, indent=2))
 
     ip_permissions = response["SecurityGroups"][0]["IpPermissions"]
